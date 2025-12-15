@@ -28,8 +28,8 @@ export async function sendBrevoMail({
     },
     body: JSON.stringify({
       sender: {
-        name: process.env.APP_NAME || "Portfolio",
-        email: "no-reply@brevo.com", // FREE shared sender
+        name: process.env.BREVO_SENDER_NAME || process.env.APP_NAME || "IYAPPAN S P",
+        email: process.env.BREVO_SENDER_EMAIL || "iyappansanthoosh27032004@gmail.com",
       },
       to: [{ email: to }],
       subject,
