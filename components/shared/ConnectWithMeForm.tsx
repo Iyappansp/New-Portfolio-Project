@@ -122,7 +122,6 @@ export function ConnectWithMeForm() {
             onChange={handleChange}
             required
             placeholder="+91 XXXXX XXXXX"
-            pattern="[0-9+\s-]+"
             className="w-full px-4 py-3 rounded-xl bg-background/50 border border-primary-500/20 focus:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition-all duration-300 text-foreground placeholder:text-foreground/40"
           />
         </div>

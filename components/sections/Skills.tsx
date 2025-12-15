@@ -16,13 +16,6 @@ export default function Skills() {
     ? skillsData.filter((cat) => cat.title === selectedCategory)
     : skillsData;
 
-  const totalSkills = skillsData.reduce((sum, cat) => sum + cat.skills.length, 0);
-  const expertSkills = skillsData.reduce(
-    (sum, cat) =>
-      sum + cat.skills.filter((skill) => skill.proficiency >= 90).length,
-    0
-  );
-
   return (
     <section id="skills" className="relative py-20 md:py-32 overflow-hidden">
       {/* Animated Background Elements */}
@@ -66,41 +59,10 @@ export default function Skills() {
             My <span className="text-gradient">Skills & Expertise</span>
           </h2>
 
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             A comprehensive collection of technologies and frameworks I've mastered
             across different domains of software development.
           </p>
-
-          {/* Stats Row */}
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.05 }}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">
-                {totalSkills}
-              </div>
-              <div className="text-left">
-                <p className="text-sm text-foreground/60">Total Skills</p>
-                <p className="font-semibold text-foreground">Mastered</p>
-              </div>
-            </motion.div>
-
-            <div className="w-px h-8 bg-foreground/20" />
-
-            <motion.div className="flex items-center gap-3" whileHover={{ scale: 1.05 }}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold">
-                {expertSkills}
-              </div>
-              <div className="text-left">
-                <p className="text-sm text-foreground/60">Expert Level</p>
-                <p className="font-semibold text-foreground">90%+</p>
-              </div>
-            </motion.div>
-          </motion.div>
         </motion.div>
 
         {/* Skills Filter */}

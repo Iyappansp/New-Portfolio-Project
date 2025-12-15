@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Award, Trophy, ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Award, Trophy, ExternalLink, Eye, X } from "lucide-react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useState } from "react";
 
 interface Achievement {
   id: string;
@@ -11,6 +12,7 @@ interface Achievement {
   icon: string;
   link?: string;
   year?: string;
+  certificateImage?: string;
 }
 
 const achievements: Achievement[] = [
@@ -33,18 +35,21 @@ const achievements: Achievement[] = [
     title: "Certificate in MERN Stack",
     description: "Completed comprehensive training in MongoDB, Express.js, React.js, and Node.js full-stack development.",
     icon: "💻",
+    certificateImage: "/images/certificates/mern-stack.jpg", // Add your certificate image path
   },
   {
     id: "4",
     title: "Certificate in Python Programming",
     description: "Gained intermediate proficiency in Python programming with focus on backend development and scripting.",
     icon: "🐍",
+    certificateImage: "/images/certificates/python.jpg", // Add your certificate image path
   },
   {
     id: "5",
     title: "Google UI/UX Design Certificate",
     description: "Completed Google's professional certificate program in UI/UX Design, mastering design thinking and prototyping.",
     icon: "🎨",
+    certificateImage: "/images/certificates/google-ux.jpg", // Add your certificate image path
   },
   {
     id: "6",
@@ -71,6 +76,7 @@ const achievements: Achievement[] = [
 
 export default function Achievements() {
   const prefersReducedMotion = useReducedMotion();
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
 
   return (
     <section id="achievements" className="relative py-20 md:py-32 overflow-hidden">
@@ -160,9 +166,20 @@ export default function Achievements() {
                 )}
 
                 {/* Description */}
-                <p className="text-foreground/70 text-sm leading-relaxed">
+                <p className="text-foreground/70 text-sm leading-relaxed mb-4">
                   {achievement.description}
                 </p>
+
+                {/* View Image Button */}
+                {achievement.certificateImage && (
+                  <button
+                    onClick={() => setSelectedCertificate(achievement.certificateImage!)}
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-500 to-accent-500 text-white text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                  >
+                    <Eye size={16} />
+                    View Image
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}
@@ -184,6 +201,64 @@ export default function Achievements() {
           </div>
         </motion.div>
       </div>
+
+      {/* Certificate Modal */}
+      <AnimatePresence>
+        {selectedCertificate && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setSelectedCertificate(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-4xl w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedCertificate(null)}
+                className="absolute -top-12 right-0 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
+              >
+                <X size={24} />
+              </button>
+
+              {/* Animated Gradient Border Container */}
+              <div className="relative p-1 rounded-2xl overflow-hidden">
+                {/* Animated Gradient Border */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 opacity-75"
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  style={{
+                    backgroundSize: "200% 200%",
+                  }}
+                />
+
+                {/* Image Container */}
+                <div className="relative bg-background rounded-2xl p-2">
+                  <img
+                    src={selectedCertificate}
+                    alt="Certificate"
+                    className="w-full h-auto rounded-xl"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
