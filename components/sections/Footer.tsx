@@ -129,7 +129,7 @@ export default function Footer() {
               © {companyInfo.year} {companyInfo.name}. All rights reserved.
             </p>
             <p className="text-xs text-foreground/50 flex items-center justify-center gap-2">
-              Designed & Built with <Heart size={14} className="text-red-500 fill-red-500 animate-pulse" /> using Next.js & Tailwind CSS
+              Iyap"S<Heart size={14} className="text-red-500 fill-red-500 animate-pulse" />
             </p>
           </motion.div>
         </div>

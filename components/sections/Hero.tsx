@@ -94,7 +94,7 @@ export default function Hero() {
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/30 to-purple-500/30 rounded-full">
                     <Image
-                      src="https://ui-avatars.com/api/?name=Your+Name&size=400&background=6366f1&color=fff"
+                      src="/image.png"
                       alt="Profile Placeholder"
                       fill
                       className="rounded-full object-cover"

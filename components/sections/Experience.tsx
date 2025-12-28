@@ -103,11 +103,11 @@ export default function Experience() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="inline-block p-6 rounded-2xl glass border border-primary-500/30">
+          {/* <div className="inline-block p-6 rounded-2xl glass border border-primary-500/30">
             <p className="text-foreground/80 text-lg">
               💼 Open to new opportunities in Full-Stack Development, AI/ML, and Technical Mentoring
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

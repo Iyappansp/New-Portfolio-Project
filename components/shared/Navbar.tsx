@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -50,7 +51,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled ? "glass py-4 shadow-lg" : "bg-transparent py-6"
+          scrolled ? "glass py-0 shadow-lg" : "bg-transparent py-3"
         }`}
       >
         <div className="container mx-auto px-4">
@@ -62,11 +63,21 @@ export default function Navbar() {
                 e.preventDefault();
                 scrollToSection("#home");
               }}
-              className="text-2xl font-heading font-bold text-gradient"
+              className="relative overflow-hidden cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Portfolio
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-46 md:h-46">
+                <Image 
+                  src="/logo.png" 
+                  alt="Logo" 
+                  fill
+                  className="object-contain"
+                  priority
+                />
+                {/* Shining effect overlay */}
+                {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine pointer-events-none" /> */}
+              </div>
             </motion.a>
 
             {/* Desktop Navigation */}

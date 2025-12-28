@@ -193,12 +193,12 @@ export default function Achievements() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-primary-500/30">
+          {/* <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-primary-500/30">
             <Award className="text-primary-500" size={18} />
             <p className="text-sm text-foreground/80">
               Continuously learning and adding new skills to my repertoire
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
 
