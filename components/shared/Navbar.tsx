@@ -51,7 +51,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled ? "glass py-0 shadow-lg" : "bg-transparent py-3"
+          scrolled ? "glass py-4 shadow-lg" : "bg-transparent py-2"
         }`}
       >
         <div className="container mx-auto px-4">
@@ -67,7 +67,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-46 md:h-46">
+              <div className="relative w-30 h-18 sm:w-24 sm:h-20 md:w-48 md:h-22">
                 <Image 
                   src="/logo.png" 
                   alt="Logo" 
