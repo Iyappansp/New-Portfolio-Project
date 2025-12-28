@@ -72,7 +72,7 @@ export default function About() {
               <div className="absolute inset-1 bg-background rounded-3xl overflow-hidden">
                 {!imageError ? (
                   <Image
-                    src="/images/about-image.jpg"
+                    src="/new-about.png"
                     alt="About me"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-500"
@@ -82,7 +82,7 @@ export default function About() {
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/30 to-purple-500/30">
                     <Image
-                      src="https://ui-avatars.com/api/?name=Your+Name&size=600&background=6366f1&color=fff"
+                      src="/new-about.png"
                       alt="About me placeholder"
                       fill
                       className="object-cover"
@@ -99,7 +99,7 @@ export default function About() {
                 transition={prefersReducedMotion ? {} : { repeat: Infinity, duration: 3 }}
               >
                 <p className="text-sm font-semibold text-foreground">
-                  🚀 Always Learning
+                  About Me
                 </p>
               </motion.div>
             </motion.div>

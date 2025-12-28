@@ -90,12 +90,12 @@ export default function Skills() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-primary-500/30">
+          {/* <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass border border-primary-500/30">
             <Zap className="text-primary-500" size={18} />
             <p className="text-sm text-foreground/80">
               Constantly learning new technologies and improving existing skills
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

@@ -197,11 +197,11 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="inline-block p-6 rounded-2xl glass border border-primary-500/30">
+          {/* <div className="inline-block p-6 rounded-2xl glass border border-primary-500/30">
             <p className="text-foreground/80 text-lg">
               📧 Response time: Usually within 24 hours
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>
