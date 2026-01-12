@@ -22,12 +22,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name - Full Stack Developer",
-  description: "Modern portfolio showcasing web development projects and skills",
+  title: "Iyappan S P",
+  description: "Portfolio showcasing web development projects and skills",
   keywords: ["developer", "portfolio", "Next.js", "React", "TypeScript"],
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Iyappan S P" }],
   openGraph: {
-    title: "Your Name - Developer Portfolio",
+    title: "Iyappn S P",
     description: "Crafting digital experiences with modern web technologies",
     type: "website",
   },
